@@ -20,4 +20,4 @@ if __name__ == '__main__':
     o3d.visualization.draw_geometries([pcd])
 
     # Save into ply file:
-    o3d.io.write_point_cloud("../outputs/bunny_pcd.ply", pcd)
+    o3d.io.write_point_cloud("../output/bunny_pcd.ply", pcd)
