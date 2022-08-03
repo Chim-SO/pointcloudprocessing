@@ -39,7 +39,7 @@ if __name__ == '__main__':
         for j in range(width):
             z = depth_image[i][j] / scale
             x = (j - CX_DEPTH) * depth_image[i][j] / FX_DEPTH
-            y = ((height - i) - CY_DEPTH) * depth_image[i][j] / FY_DEPTH
+            y = (i - CY_DEPTH) * depth_image[i][j] / FY_DEPTH
             pcd.append([x, y, z])
 
     # visualization:
