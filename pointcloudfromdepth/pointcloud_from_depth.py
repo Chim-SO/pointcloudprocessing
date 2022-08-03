@@ -11,7 +11,7 @@ if __name__ == '__main__':
     CY_DEPTH = 2.3844389626620386e+02
 
     # Read depth image:
-    depth_image = iio.imread('data/depth.png')
+    depth_image = iio.imread('../data/depth.png')
 
     # print properties:
     print(f"Image resolution: {depth_image.shape}")
@@ -21,7 +21,7 @@ if __name__ == '__main__':
 
     # Compute depth grayscale:
     depth_grayscale = np.array(256 * depth_image / 0x0fff, dtype=np.uint8)
-    iio.imwrite('output/depth_grayscale.png', depth_grayscale)
+    iio.imwrite('../output/depth_grayscale.png', depth_grayscale)
 
     # Display depth and grayscale image:
     fig, axs = plt.subplots(1, 2)
