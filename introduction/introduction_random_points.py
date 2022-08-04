@@ -1,5 +1,3 @@
-# references:
-# https://jakevdp.github.io/PythonDataScienceHandbook/04.12-three-dimensional-plotting.html
 import numpy as np
 import matplotlib.pyplot as plt
 
