@@ -34,19 +34,18 @@ def compute_pcd_vectorization(depth_im):
     # get depth resolution:
     height, width = depth_im.shape
     # compute indices:
-    ii = np.tile(range(width), height)
-    jj = np.repeat(range(height), width)
+    jj = np.tile(range(width), height)
+    ii = np.repeat(range(height), width)
     # rechape depth image
     z = depth_im.reshape(height * width)
     # compute pcd:
-    pcd = np.array([(ii - CX_DEPTH) * z / FX_DEPTH,
+    pcd = np.dstack([(ii - CX_DEPTH) * z / FX_DEPTH,
                     (jj - CY_DEPTH) * z / FY_DEPTH,
-                    z]).transpose()
+                    z]).reshape((length, 3))
     return pcd
 
 
 if __name__ == '__main__':
-    print(np.ndindex(480, 640))
     # Camera parameters:
     FX_DEPTH = 5.8262448167737955e+02
     FY_DEPTH = 5.8269103270988637e+02
@@ -77,8 +76,8 @@ if __name__ == '__main__':
     # get depth image resolution:
     height, width = depth_image.shape
     # compute indices:
-    ii = np.tile(range(width), height)
-    jj = np.repeat(range(height), width)
+    jj = np.tile(range(width), height)
+    ii = np.repeat(range(height), width)
     # Compute constants:
     xx = (jj - CX_DEPTH) / FX_DEPTH
     yy = (ii - CY_DEPTH) / FY_DEPTH
@@ -86,12 +85,11 @@ if __name__ == '__main__':
     length = height * width
     z = depth_image.reshape(height * width)
     # compute point cloud
-    pcd = np.array([xx * z, yy * z, z]).transpose()
+    pcd = np.dstack((xx * z, yy * z, z)).reshape((length, 3))
 
     # visualization:
     # Convert to Open3D.PointCLoud:
     pcd_o3d = o3d.geometry.PointCloud()  # create point cloud object
     pcd_o3d.points = o3d.utility.Vector3dVector(pcd)  # set pcd_np as the point cloud points
-
     # Visualize:
     o3d.visualization.draw_geometries([pcd_o3d])
