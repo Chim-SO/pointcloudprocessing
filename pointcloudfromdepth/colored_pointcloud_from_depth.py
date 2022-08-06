@@ -40,10 +40,10 @@ def compute_colored_pointcloud_nested_loops(depth_image, rgb_image):
 
             # Add the color of the pixel if it exists:
             if 0 <= j_rgb < width and 0 <= i_rgb < height:
-                colors.append(rgb_image[i_rgb][j_rgb] / 255)
+                colors.append(rgb_image[i_rgb][j_rgb])
             else:
                 colors.append([0., 0., 0.])
-        return [pcd, colors]
+    return [np.array(pcd), np.array(colors)]
 
 
 if __name__ == '__main__':
@@ -105,6 +105,6 @@ if __name__ == '__main__':
     # Convert to Open3D.PointCLoud:
     pcd_o3d = o3d.geometry.PointCloud()  # create a point cloud object
     pcd_o3d.points = o3d.utility.Vector3dVector(pcd)
-    pcd_o3d.colors = o3d.utility.Vector3dVector(np.array(colors/255))
+    pcd_o3d.colors = o3d.utility.Vector3dVector(np.array(colors / 255))
     # Visualize:
     o3d.visualization.draw_geometries([pcd_o3d])
