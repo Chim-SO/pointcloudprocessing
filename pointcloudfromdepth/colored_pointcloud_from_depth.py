@@ -20,18 +20,18 @@ def compute_colored_pointcloud_nested_loops(depth_image, rgb_image):
     pcd = []
     for i in range(height):
         for j in range(width):
-            # Convert the pixel from depth coordinates
-            # to depth sensor 3D coordinates
+            # Convert the pixel from depth coordinate system
+            # to depth sensor 3D coordinate system
             z = depth_image[i][j]
             x = (j - CX_DEPTH) * z / FX_DEPTH
             y = (i - CY_DEPTH) * z / FY_DEPTH
 
-            # Convert the point from depth sensor 3D coordinates system
-            # to rgb camera coordinates system:
+            # Convert the point from depth sensor 3D coordinate system
+            # to rgb camera coordinate system:
             [x_RGB, y_RGB, z_RGB] = np.linalg.inv(R).dot([x, y, z]) - np.linalg.inv(R).dot(T)
 
-            # Convert from rgb camera coordinates system
-            # to rgb image coordinates system:
+            # Convert from rgb camera coordinate system
+            # to rgb image coordinate system:
             j_rgb = int((x_RGB * FX_RGB) / z_RGB + CX_RGB + width / 2)
             i_rgb = int((y_RGB * FY_RGB) / z_RGB + CY_RGB)
 
