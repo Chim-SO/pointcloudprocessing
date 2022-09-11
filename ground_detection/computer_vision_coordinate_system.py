@@ -30,6 +30,7 @@ if __name__ == '__main__':
     MAGENTA = [1., 0., 1.]
     CYAN = [0., 1., 1.]
 
+    # Draw spheres at positions with colors:
     positions = [x_max, y_max, z_max, x_min, y_min, z_min]
     colors = [RED, GREEN, BLUE, MAGENTA, YELLOW, CYAN]
     for i in range(len(positions)):
@@ -41,7 +42,7 @@ if __name__ == '__main__':
         sphere.paint_uniform_color(np.asarray(colors[i]))
         # compute normals for vertices or faces:
         sphere.compute_vertex_normals()
-        # add to geometry ist to display later:
+        # add to geometry list to display later:
         geometries.append(sphere)
 
     # Display:
