@@ -13,25 +13,30 @@ def compute_colored_pointcloud_nested_loops(depth_image, rgb_image):
     :param rgb_image: the corresponding rgb image
     :return: the colored point cloud
     """
-    # Compute colored point cloud
-    # Both images has the same resolution
+
     height, width = depth_image.shape
     colors = []
     pcd = []
     for i in range(height):
         for j in range(width):
-            # Convert the pixel from depth coordinate system
-            # to depth sensor 3D coordinate system
+            """
+                Convert the pixel from depth coordinate system
+                to depth sensor 3D coordinate system
+            """
             z = depth_image[i][j]
             x = (j - CX_DEPTH) * z / FX_DEPTH
             y = (i - CY_DEPTH) * z / FY_DEPTH
 
-            # Convert the point from depth sensor 3D coordinate system
-            # to rgb camera coordinate system:
+            """
+                Convert the point from depth sensor 3D coordinate system
+                to rgb camera coordinate system:            
+            """
             [x_RGB, y_RGB, z_RGB] = np.linalg.inv(R).dot([x, y, z]) - np.linalg.inv(R).dot(T)
 
-            # Convert from rgb camera coordinate system
-            # to rgb image coordinate system:
+            """
+                Convert from rgb camera coordinate system
+                to rgb image coordinate system:            
+            """
             j_rgb = int((x_RGB * FX_RGB) / z_RGB + CX_RGB + width / 2)
             i_rgb = int((y_RGB * FY_RGB) / z_RGB + CY_RGB)
 
@@ -101,7 +106,6 @@ if __name__ == '__main__':
     yy_rgb = ((cam_RGB[:, 1] * FY_RGB) / cam_RGB[:, 2] + CY_RGB).astype(int).clip(0, height - 1)
     colors = rgb_image[yy_rgb, xx_rgb]
 
-    # Visualization:
     # Convert to Open3D.PointCLoud:
     pcd_o3d = o3d.geometry.PointCloud()  # create a point cloud object
     pcd_o3d.points = o3d.utility.Vector3dVector(pcd)

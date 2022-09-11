@@ -55,7 +55,7 @@ if __name__ == '__main__':
     # Read depth image:
     depth_image = iio.imread('../data/depth.png')
 
-    # print properties:
+    # print some properties:
     print(f"Image resolution: {depth_image.shape}")
     print(f"Data type: {depth_image.dtype}")
     print(f"Min value: {np.min(depth_image)}")
@@ -87,7 +87,6 @@ if __name__ == '__main__':
     # compute point cloud
     pcd = np.dstack((xx * z, yy * z, z)).reshape((length, 3))
 
-    # visualization:
     # Convert to Open3D.PointCLoud:
     pcd_o3d = o3d.geometry.PointCloud()  # create point cloud object
     pcd_o3d.points = o3d.utility.Vector3dVector(pcd)  # set pcd_np as the point cloud points
