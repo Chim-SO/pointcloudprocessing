@@ -11,17 +11,23 @@ Includes the input files that are used for demonstration.
 Includes some saved output data.
 
 - [introduction](https://github.com/Chim-SO/pointcloudprocessing/tree/main/introduction) folder:  
-includes the examples of the first tutorial: [Introduction to Point Cloud Processing]().
+includes the examples of the first tutorial: [Introduction to Point Cloud Processing](https://medium.com/@chimso1994/introduction-to-point-cloud-processing-dbda9b167534).
     - [introduction_random_points.py](https://github.com/Chim-SO/pointcloudprocessing/blob/main/introduction/introduction_random_points.py) : creates a random point cloud and display it using Matplotlib.
     - [introduction_sampling.py](https://github.com/Chim-SO/pointcloudprocessing/blob/main/introduction/introduction_sampling.py) : samples point cloud from a mesh and display it using Open3D.
     - [introduction_np_o3d.py](https://github.com/Chim-SO/pointcloudprocessing/blob/main/introduction/introduction_np_o3d.py) : switching between Open3D and NumPy.
     - [introduction_rgbd.py](https://github.com/Chim-SO/pointcloudprocessing/blob/main/introduction/introduction_rgbd.py) : computing point clours from RGB-D data using Open3D functions.
     
 - [pointcloudfromdepth](https://github.com/Chim-SO/pointcloudprocessing/tree/main/pointcloudfromdepth) folder:  
-includes the examples of the second tutorial: [Point cloud computing from RGB-D images]().
+includes the examples of the second tutorial: [Point cloud computing from RGB-D images](https://medium.com/@chimso1994/point-cloud-computing-from-rgb-d-images-918414d57e80).
     - [pointcloud_from_depth.py](https://github.com/Chim-SO/pointcloudprocessing/blob/main/pointcloudfromdepth/pointcloud_from_depth.py) : compute point clouds from RGB-D data without using Open3D functions.
-    - [colored_pointcloud_from_depth.py](https://github.com/Chim-SO/pointcloudprocessing/blob/main/pointcloudfromdepth/colored_pointcloud_from_depth.py) : compute colored point clouds.
+    - [colored_pointcloud_from_depth.py](https://github.com/Chim-SO/pointcloudprocessing/blob/main/pointcloudfromdepth/colored_pointcloud_from_depth.py) : compute colored point clouds.  
+    
+- [grounddetection](https://github.com/Chim-SO/pointcloudprocessing/tree/main/grounddetection) folder:  
+Includes the examples of the third tutorial: [Understand point clouds: a simple ground detection algorithm]()
+    - [computer_vision_coordinate_system.py](https://github.com/Chim-SO/pointcloudprocessing/blob/main/grounddetection/computer_vision_coordinate_system.py) : Understand the computer vision system coordinate.
+    - [ground_detection.py](https://github.com/Chim-SO/pointcloudprocessing/blob/main/grounddetection/ground_detection.py) : A simple ground detection algorithm.
+    - [organized_pointcloud.py](https://github.com/Chim-SO/pointcloudprocessing/blob/main/grounddetection/organized_pointcloud.py) : compute organized point cloud.
 
 # Requirements
-- Open3D 
-- NumPy
+- Open3D : 0.15.1
+- NumPy : 1.21.6
