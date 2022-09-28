@@ -18,17 +18,14 @@ if __name__ == '__main__':
     points = np.asarray(random_pcd.points)
     points += [-3, 3, 0]
     random_pcd.points = o3d.utility.Vector3dVector(points)
-    random_pcd.paint_uniform_color([0, 1., 0])
 
     points = np.asarray(uniform_pcd.points)
     points += [0, 3, 0]
     uniform_pcd.points = o3d.utility.Vector3dVector(points)
-    uniform_pcd.paint_uniform_color([0, 0., 1.])
 
     points = np.asarray(voxel_pcd.points)
     points += [3, 3, 0]
     voxel_pcd.points = o3d.utility.Vector3dVector(points)
-    voxel_pcd.paint_uniform_color([1., 0., 1.])
 
     # Display:
     o3d.visualization.draw_geometries([pcd, random_pcd, uniform_pcd, voxel_pcd])
