@@ -28,6 +28,13 @@ Includes the examples of the third tutorial: [Understand point clouds: a simple 
     - [ground_detection.py](https://github.com/Chim-SO/pointcloudprocessing/blob/main/grounddetection/ground_detection.py) : A simple ground detection algorithm.
     - [organized_pointcloud.py](https://github.com/Chim-SO/pointcloudprocessing/blob/main/grounddetection/organized_pointcloud.py) : compute organized point cloud.
 
+- [preprocessing](https://github.com/Chim-SO/pointcloudprocessing/tree/main/preprocessing) folder:  
+Includes the examples of the 4th tutorial: [Point Cloud Filtering in Python]().
+    - [crop_pointcloud_o3d.py](https://github.com/Chim-SO/pointcloudprocessing/blob/main/preprocessing/crop_pointcloud_o3d.py) : pass-through filter using Open3D.
+    - [passthrough_filter_np.py](https://github.com/Chim-SO/pointcloudprocessing/blob/main/preprocessing/passthrough_filter_np.py) : a NumPy implementation of pass-through filter.
+    - [downsampling.py](https://github.com/Chim-SO/pointcloudprocessing/blob/main/preprocessing/downsampling.py) : down-sampling methods.
+    - [point_cloud_filtering.py](https://github.com/Chim-SO/pointcloudprocessing/blob/main/preprocessing/point_cloud_filtering.py) : outlier removal filters: statistical outlier removal and radius outlier removal demonstration.
+
 # Requirements
 - Open3D : 0.15.1
 - NumPy : 1.21.6
