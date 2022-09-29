@@ -29,7 +29,7 @@ Includes the examples of the third tutorial: [Understand point clouds: a simple 
     - [organized_pointcloud.py](https://github.com/Chim-SO/pointcloudprocessing/blob/main/grounddetection/organized_pointcloud.py) : compute organized point cloud.
 
 - [preprocessing](https://github.com/Chim-SO/pointcloudprocessing/tree/main/preprocessing) folder:  
-Includes the examples of the 4th tutorial: [Point Cloud Filtering in Python]().
+Includes the examples of the 4th tutorial: [Point Cloud Filtering in Python](https://medium.com/@chimso1994/point-cloud-filtering-in-python-e8a06bbbcee5).
     - [crop_pointcloud_o3d.py](https://github.com/Chim-SO/pointcloudprocessing/blob/main/preprocessing/crop_pointcloud_o3d.py) : pass-through filter using Open3D.
     - [passthrough_filter_np.py](https://github.com/Chim-SO/pointcloudprocessing/blob/main/preprocessing/passthrough_filter_np.py) : a NumPy implementation of pass-through filter.
     - [downsampling.py](https://github.com/Chim-SO/pointcloudprocessing/blob/main/preprocessing/downsampling.py) : down-sampling methods.
