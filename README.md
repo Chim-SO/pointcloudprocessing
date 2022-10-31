@@ -34,6 +34,12 @@ Includes the examples of the 4th tutorial: [Point Cloud Filtering in Python](htt
     - [passthrough_filter_np.py](https://github.com/Chim-SO/pointcloudprocessing/blob/main/preprocessing/passthrough_filter_np.py) : a NumPy implementation of pass-through filter.
     - [downsampling.py](https://github.com/Chim-SO/pointcloudprocessing/blob/main/preprocessing/downsampling.py) : down-sampling methods.
     - [point_cloud_filtering.py](https://github.com/Chim-SO/pointcloudprocessing/blob/main/preprocessing/point_cloud_filtering.py) : outlier removal filters: statistical outlier removal and radius outlier removal demonstration.
+    
+- [segmentation](https://github.com/Chim-SO/pointcloudprocessing/tree/main/segmentation) folder:  
+Includes the examples of the 5th tutorial: [Point Cloud Segmentation in Python](https://medium.com/mlearning-ai/point-cloud-segmentation-in-python-2fdbf5ea0617).
+    - [clustering.py](https://github.com/Chim-SO/pointcloudprocessing/blob/main/segmentation/clustering.py): point cloud clustering.
+    - [projection_clustering.py](https://github.com/Chim-SO/pointcloudprocessing/blob/main/segmentation/Projection_clustering.py): clustering of a projected point cloud.
+
 
 # Requirements
 - Open3D : 0.15.1
